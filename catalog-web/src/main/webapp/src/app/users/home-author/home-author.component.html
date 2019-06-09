@@ -1,0 +1,86 @@
+<div id="side-bar">
+  {{currentUser.name}} <br>
+  Current status: author
+  <br>
+  <br>
+  <div id="options">
+    <button (click)="seeWork()" class="just-btn">See work</button>
+    <button (click)="seeSessions()" class="just-btn">See my sessions</button>
+    <button (click)="showSessions()" class="just-btn">Choose session</button>
+    <button (click)="logout()" class="just-btn">Logout</button>
+  </div>
+
+</div>
+<div id="stuff-div-on-right" >
+
+  <div *ngIf="seeSessionsClicked" class="see-sessions">
+    <h3>Current existing sessions:</h3>
+    <ol >
+      <li *ngFor="let session of sessions "
+      >
+        {{session.location}},
+        {{session.when}},
+        {{session.participantsNr}}
+        <button (click)="chooseSession(session)">Go here</button>
+      </li>
+
+    </ol>
+  </div>
+
+  <div *ngIf="seeMySessionsClicked">
+    <div *ngIf="!mySessions">Currently no sessions</div>
+    <div *ngIf="mySessions">
+    <h3>My sessions:</h3>
+    <ol >
+      <li *ngFor="let session of mySessions "
+      >
+        {{session.location}},
+        {{session.when}}
+      </li>
+
+    </ol>
+    </div>
+  </div>
+
+  <div *ngIf="myWorkClicked">
+    <div *ngIf="myAbstract">
+      ABSTRACT:
+      <br>
+      <br>
+      <br>
+      Title: {{myAbstract.title}} <br>
+      Keywords: {{myAbstract.keywords}} <br>
+      Topics: {{myAbstract.topics}} <br>
+      Authors: {{myAbstract.authorNames}} <br>
+      Filepath: {{myAbstract.abstractPath}} <br>
+      STATUS: {{myAbstract.status}}
+      <br>
+      <input type="file" (change)="abstractChange($event)" placeholder="Reupload abstract" accept=".pdf,.doc,.docx">
+      <br>
+      <button (click)="saveChangesAbstract()">Save changes</button>
+      <br>
+      <div *ngIf="!myPaper">
+        Paper name: <input #paperName type="text">
+        <br>
+        Choose file: <input type="file" (change)="fileChange($event)" placeholder="Upload paper" accept=".pdf,.doc,.docx">
+        <br>
+        <button (click)="addPaper(paperName.value)">Add paper</button>
+      </div>
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+    FILE:
+    <div *ngIf="myPaper">
+      <br>
+        Title: {{myPaper.title}} <br>
+        FilePath: {{myPaper.filePath}} <br>
+      <input type="file" (change)="fileChange($event)" placeholder="Reupload paper" accept=".pdf,.doc,.docx">
+      <br>
+      <button (click)="saveChangesPaper()">Save changes</button>
+    </div>
+  </div>
+</div>
+

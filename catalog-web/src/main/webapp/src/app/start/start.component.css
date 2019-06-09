@@ -1,0 +1,15 @@
+.ss
+{
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+
+}
+.sx
+{
+  background-image: url("img.jpg");
+
+}

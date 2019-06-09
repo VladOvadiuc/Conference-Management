@@ -1,0 +1,105 @@
+<div>
+  <ol *ngIf="users">
+    <li class="list-group-item" *ngFor="let user of users "
+        (click)="onSelect(user)">
+      {{user.name}},
+      {{user.email}},
+      {{user.password}},
+      {{user.affiliation}},
+      {{user.username}}
+
+    </li>
+
+  </ol>
+</div>
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark" style="height:100vh; background-size: cover;  background-image: url('../../../images/imagine1.jpg');">
+
+  <div class="container-fluid">
+    <div class="row  justify-content-center align-items-center d-flex text-center h-100">
+      <div class="col-12 col-md-8  h-50 ">
+        <h1 class="display-2  text-light mb-2 mt-5"><strong>HI, {{member.name}} </strong> </h1>
+        <h3 class="display-2  text-light mb-2 mt-5">{{member.webpage}} </h3>
+
+        <button class="btn btn-info btn-lg" (click)="loadUsers()">Users list</button><br><br>
+        <button class="btn btn-info btn-lg" (click)="loadMembers()">Members list</button><br><br>
+        <button class="btn btn-info btn-lg" (click)="loadPapers()">Papers list</button><br><br>
+        <button class="btn btn-info btn-lg" (click)="loadAbstracts()">Abstract list</button><br><br>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<div>
+  <ol  *ngIf="members">
+    <li class="list-group-item" *ngFor="let member of members "
+        (click)="onSelect(member)">
+      {{member.name}},
+      {{member.email}},
+      {{member.password}},
+      {{member.affiliation}},
+      {{member.username}}
+    </li>
+
+  </ol>
+</div>
+
+<div>
+  <ol  *ngIf="papers">
+    <li class="list-group-item" *ngFor="let paper of papers ">
+      {{paper.id}},
+      {{paper.title}}
+
+      <div class="form-group">
+
+        <select id="reviewResult" name="reviewResult">
+          <option>Strong accept</option>
+          <option>Accept</option>
+          <option>Weak accept</option>
+          <option>Borderline paper</option>
+          <option>Weak reject</option>
+          <option>Reject</option>
+          <option>Strong reject</option>
+        </select>
+
+              </div>
+
+              <button class="btn btn-info btn-lg" (click)="review(paper)">Review</button><br><br>
+            </li>
+
+          </ol>
+        </div>
+
+
+        <div>
+          <ol  *ngIf="abstracts">
+            <li class="list-group-item" *ngFor="let abstract of abstracts ">
+      {{abstract.id}},
+      {{abstract.title}}
+
+      <div class="form-group">
+
+        <select id="bidResult" name="bidResult">
+          <option>Pleased to review</option>
+          <option>Refuse to review</option>
+          <option>Indiferent</option>
+        </select>
+
+      </div>
+              <button class="btn btn-info btn-lg" (click)="bid(abstract)">Bid</button><br><br>
+
+    </li>
+
+  </ol>
+</div>
+

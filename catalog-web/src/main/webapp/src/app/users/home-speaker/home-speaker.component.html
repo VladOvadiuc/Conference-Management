@@ -1,0 +1,73 @@
+<div id="side-bar">
+  {{currentUser.name}} <br>
+  Current status: author
+  <br>
+  <br>
+  <div id="options">
+    <button (click)="seeWork()" class="just-btn">See work</button>
+    <button (click)="seeSessions()" class="just-btn">See my sessions</button>
+    <button (click)="showSessions()" class="just-btn">Choose session</button>
+    <button (click)="logout()" class="just-btn">Logout</button>
+  </div>
+
+</div>
+<div id="stuff-div-on-right" >
+
+  <div *ngIf="sessions" class="see-sessions">
+    <h3>Current existing sessions:</h3>
+    <ol >
+      <li *ngFor="let session of sessions "
+      >
+        {{session.location}},
+        {{session.when}},
+        {{session.participantsNr}}
+        <button (click)="chooseSession(session)">Go here</button>
+      </li>
+
+    </ol>
+  </div>
+
+  <div *ngIf="seeMySessionsClicked">
+    <div *ngIf="!mySessions">Currently no sessions</div>
+    <div *ngIf="mySessions">
+      <h3>My sessions:</h3>
+      <ol >
+        <li *ngFor="let session of mySessions "
+        >
+          {{session.location}},
+          {{session.when}}
+        </li>
+
+      </ol>
+    </div>
+  </div>
+
+  <div *ngIf="myWorkClicked">
+    <div *ngIf="myWorkClicked">
+      <div *ngIf="myAbstract">
+        ABSTRACT:
+        <br>
+        <br>
+        <br>
+        Title: {{myAbstract.title}} <br>
+        Keywords: {{myAbstract.keywords}} <br>
+        Topics: {{myAbstract.topics}} <br>
+        Authors: {{myAbstract.authorNames}} <br>
+        Filepath: {{myAbstract.abstractPath}} <br>
+        STATUS: {{myAbstract.status}}
+
+
+      </div>
+      <br>
+      <br>
+      <br>
+      FILE:
+        <br>
+      <div *ngIf="myPaper">
+        Title: {{myPaper.title}} <br>
+        FilePath: {{myPaper.filePath}} <br>
+      </div>
+    </div>
+  </div>
+</div>
+

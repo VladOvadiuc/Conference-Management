@@ -1,0 +1,17 @@
+<div>
+  <h3>List of Users:</h3>
+  <ol class="users" *ngIf="users">
+    <li *ngFor="let user of users "
+        (click)="onSelect(user)">
+      {{user.name}},
+      {{user.email}},
+      {{user.password}},
+      {{user.affiliation}},
+      {{user.username}}
+
+
+      <button routerLink="/users/{{user.id}}" routerLinkActive="active">Details</button>
+    </li>
+
+  </ol>
+</div>

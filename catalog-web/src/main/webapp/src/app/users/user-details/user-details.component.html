@@ -1,0 +1,14 @@
+<div>
+  <div *ngIf="!user && !error">Loading...</div>
+  <div *ngIf="error">Try again later
+    <button (click)="loadUser()">Retry</button>
+  </div>
+  <div *ngIf="user">
+    <h1> User Details </h1>
+    <div>{{user.name}}</div>
+    <div>{{user.email}}</div>
+    <div>{{user.affiliation}}</div>
+    <div>{{user.username}}</div>
+    <br/>
+  </div>
+</div>

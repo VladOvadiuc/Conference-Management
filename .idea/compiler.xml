@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="catalog-rest-template.catalog-client.main" target="1.9" />
+      <module name="catalog-rest-template.catalog-client.test" target="1.9" />
+      <module name="catalog-rest-template.catalog-core.main" target="1.9" />
+      <module name="catalog-rest-template.catalog-core.test" target="1.9" />
+      <module name="catalog-rest-template.catalog-web.main" target="1.9" />
+      <module name="catalog-rest-template.catalog-web.test" target="1.9" />
+      <module name="ro.ubb.catalog-rest-template.catalog-client.main" target="1.9" />
+      <module name="ro.ubb.catalog-rest-template.catalog-client.test" target="1.9" />
+      <module name="ro.ubb.catalog-rest-template.catalog-core.main" target="1.9" />
+      <module name="ro.ubb.catalog-rest-template.catalog-core.test" target="1.9" />
+      <module name="ro.ubb.catalog-rest-template.catalog-rest-template.main" target="1.9" />
+      <module name="ro.ubb.catalog-rest-template.catalog-rest-template.test" target="1.9" />
+      <module name="ro.ubb.catalog-rest-template.catalog-web.main" target="1.9" />
+      <module name="ro.ubb.catalog-rest-template.catalog-web.test" target="1.9" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
